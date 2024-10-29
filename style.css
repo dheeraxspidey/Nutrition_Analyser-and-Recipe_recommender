@@ -1,0 +1,610 @@
+:root {
+    --primary-color: #3a7bd5;
+    --secondary-color: #00d2ff;
+    --text-color: #e0e0e0;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+}
+.nutrition-charts-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.macro-chart, .minerals-chart {
+    min-height: 200px;
+    width: 100%;
+    position: relative;
+}
+
+.macro-chart canvas, .minerals-chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .nutrition-charts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nutrition-charts-container {
+        grid-template-columns: 1fr;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(2, 59, 0, 0.7),rgba(236, 252, 193, 0.384)), url('images/flat-lay-vegetables.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.1) 2%, transparent 0%),
+        radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.1) 2%, transparent 0%);
+    background-size: 100px 100px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    background-color: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+nav {
+    background: rgba(30, 30, 30, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+section {
+    background-color: rgba(40, 40, 40, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar, .filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"], select {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: rgba(60, 60, 60, 0.8);
+    color: var(--text-color);
+}
+
+input[type="text"]::placeholder {
+    color: rgba(224, 224, 224, 0.7);
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #2a5b9f, #0099cc);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#suggestions {
+    background-color: var(--card-background);
+    border: 1px solid #444;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 5px 5px;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#suggestions div:hover {
+    background-color: #2a2a2a;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#result, #recommendation-results, #filtered-results {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.food-info, .health-benefits {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.food-info img {
+     width: 200px;
+     height: 200px;
+     object-fit: cover;
+     border-radius: 10px;
+     margin-bottom: 20px;
+}
+
+.health-benefits h3 {
+    margin-top: 0;
+}
+
+.health-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.health-benefits li {
+    margin-bottom: 10px;
+}
+
+.health-benefits li::before {
+    content: "\2022";
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.nutritionChart, .micronutrientChart {
+    width: 400px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #45a049;
+}
+
+.pagination button.active {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close {
+    color: #888;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.recipe-item {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(40, 40, 40, 0.8);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-item:hover {
+    background-color: rgba(50, 50, 50, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(30, 30, 30, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.feature-link {
+    background-color: rgba(40, 40, 40, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex-basis: calc(33.333% - 20px);
+}
+
+.feature-link:hover {
+    transform: translateY(-5px);
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+.feature-link i {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    section {
+        flex-basis: 100%;
+    }
+    .search-bar, .filter-controls {
+        flex-direction: column;
+    }
+    input[type="text"], select {
+        flex-grow: 0;
+        width: 100%;
+    }
+    .feature-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature-link {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Add these new styles at the end of the file */
+
+.food-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: rgba(40, 40, 40, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.food-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.nutritionChart {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* You might want to adjust some existing styles to better fit with the new card layout */
+
+.food-info, .health-benefits {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 10px 0;
+}
+
+.food-info h3, .health-benefits h3 {
+    color: var(--text-color);
+    text-shadow: none;
+}
+
+.food-info p, .health-benefits ul {
+    color: var(--text-color);
+}
+
+/* Ensure the chart is visible on the dark background */
+canvas.nutritionChart {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Recipe Recommendation Section Styles */
+#recommendation-search {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#recipe-name {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#suggestions {
+    width: 80%;
+    max-width: 400px;
+}
+
+#recommendation-search button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#recommendation-search button:hover {
+    background-color: #0056b3;
+}
+
+#recommendation-results {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.main-nav {
+    background: #1a1a1a;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #888;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-nav a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.main-nav a.active {
+    background: linear-gradient(45deg, #2196F3, #00BCD4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.main-nav a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #2196F3;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::before {
+    width: 80%;
+}
+
+.main-nav i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.main-nav a:hover i {
+    transform: scale(1.1);
+}
+
+.main-nav span {
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        padding: 0.8rem 1rem;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .main-nav a {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .main-nav span {
+        display: none;
+    }
+
+    .main-nav i {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+}
+
+/* Optional: Add a subtle gradient overlay to the nav */
+.main-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
+    pointer-events: none;
+}

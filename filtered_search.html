@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a></li>
+            <li><a href="filtered_search.html" class="active">
+                <i class="fas fa-search"></i>
+                <span>Filtered Search</span>
+            </a></li>
+            <li><a href="recipe_recommendations.html">
+                <i class="fas fa-lightbulb"></i>
+                <span>Recipe Recommendation</span>
+            </a></li>
+            <li><a href="nutrition_search.html">
+                <i class="fas fa-apple-alt"></i>
+                <span>Nutrition</span>
+            </a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="filtered-search">
+            <h2><i class="fas fa-sliders-h"></i> Filtered Search</h2>
+            <div class="filter-controls">
+                
+                    <select id="category">
+                        <option value="">Select Category</option>
+                        <option value="appetizers-and-snacks">Appetizers and Snacks</option>
+                        <option value="desserts">Desserts</option>
+                        <option value="world-cuisine">World Cuisine</option>
+                        <option value="main-dish">Main Dish</option>
+                        <option value="side-dish">Side Dish</option>
+                        <option value="bread">Bread</option>
+                        <option value="soups-stews-and-chili">Soups, Stews, and Chili</option>
+                        <option value="meat-and-poultry">Meat and Poultry</option>
+                        <option value="salad">Salad</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="breakfast-and-brunch">Breakfast and Brunch</option>
+                        <option value="trusted-brands-recipes-and-tips">Trusted Brands Recipes and Tips</option>
+                        <option value="everyday-cooking">Everyday Cooking</option>
+                        <option value="fruits-and-vegetables">Fruits and Vegetables</option>
+                        <option value="pasta-and-noodles">Pasta and Noodles</option>
+                        <option value="drinks">Drinks</option>
+                        <option value="holidays-and-events">Holidays and Events</option>
+                        <option value="bbq-grilling">BBQ and Grilling</option>
+                    </select>
+                    
+                    <select id="diet-type">
+                        <option value="">Select Diet Type</option>
+                        <option value="General">General</option>
+                        <option value="High Protein">High Protein</option>
+                        <option value="Low Carb, Low Sugar">Low Carb, Low Sugar</option>
+                        <option value="Low Carb, High Protein, Low Sugar">Low Carb, High Protein, Low Sugar</option>
+                        <option value="High Protein, Low Sugar">High Protein, Low Sugar</option>
+                        <option value="Low Fat">Low Fat</option>
+                        <option value="Low Sugar">Low Sugar</option>
+                        <option value="Low Carb, Low Fat, Low Sugar">Low Carb, Low Fat, Low Sugar</option>
+                        <option value="Low Fat, Low Sugar">Low Fat, Low Sugar</option>
+                        <option value="Low Carb, Low Fat, Low Sodium, Low Sugar">Low Carb, Low Fat, Low Sodium, Low Sugar</option>
+                        <option value="Low Fat, Low Sodium">Low Fat, Low Sodium</option>
+                        <option value="Low Carb, Low Fat, Low Sodium">Low Carb, Low Fat, Low Sodium</option>
+                        <option value="Low Sodium">Low Sodium</option>
+                        <option value="Low Carb, High Protein">Low Carb, High Protein</option>
+                        <option value="Low Carb">Low Carb</option>
+                        <option value="Low Carb, Low Fat">Low Carb, Low Fat</option>
+                        <option value="Low Carb, Low Fat, High Protein, Low Sugar">Low Carb, Low Fat, High Protein, Low Sugar</option>
+                        <option value="Low Fat, High Protein">Low Fat, High Protein</option>
+                        <option value="Low Carb, Low Sodium, Low Sugar">Low Carb, Low Sodium, Low Sugar</option>
+                        <option value="Low Fat, Low Sodium, Low Sugar">Low Fat, Low Sodium, Low Sugar</option>
+                        <option value="Low Fat, High Protein, Low Sugar">Low Fat, High Protein, Low Sugar</option>
+                        <option value="Low Carb, Low Sodium">Low Carb, Low Sodium</option>
+                        <option value="Low Carb, Low Fat, High Protein">Low Carb, Low Fat, High Protein</option>
+                        <option value="Low Sodium, Low Sugar">Low Sodium, Low Sugar</option>
+                        <option value="Low Carb, High Protein, Low Sodium, Low Sugar">Low Carb, High Protein, Low Sodium, Low Sugar</option>
+                        <option value="Low Carb, Low Fat, High Protein, Low Sodium, Low Sugar">Low Carb, Low Fat, High Protein, Low Sodium, Low Sugar</option>
+                        <option value="High Protein, Low Sodium, Low Sugar">High Protein, Low Sodium, Low Sugar</option>
+                        <option value="High Protein, Low Sodium">High Protein, Low Sodium</option>
+                        <option value="Low Carb, High Protein, Low Sodium">Low Carb, High Protein, Low Sodium</option>
+                        <option value="Low Fat, High Protein, Low Sodium">Low Fat, High Protein, Low Sodium</option>
+                        <option value="Low Fat, High Protein, Low Sodium, Low Sugar">Low Fat, High Protein, Low Sodium, Low Sugar</option>
+                        <option value="Low Carb, Low Fat, High Protein, Low Sodium">Low Carb, Low Fat, High Protein, Low Sodium</option>
+                      </select>
+                      
+                      
+                    
+                      
+                      <input type="text" id="ingredients" placeholder="Ingredients (comma-separated)">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" id="serving-one"> Cooking for One</label>
+                    <label><input type="checkbox" id="serving-two"> Cooking for Two</label>
+                    <label><input type="checkbox" id="serving-crowd"> Cooking for a Crowd</label>
+                    <label><input type="checkbox" id="quick-and-easy"> Quick and Easy Recipes</label>
+                </div>
+    
+            <button onclick="filterRecipes()">Search</button>
+            <div id="filtered-results"></div>
+        </section>
+    </main>
+
+    <div id="filteredRecipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="filteredModalRecipeName"></h2>
+            <h3>Ingredients:</h3>
+            <ul id="filteredModalIngredients"></ul>
+            <h3>Directions:</h3>
+            <p id="filteredModalDirections"></p>
+            <div id="filteredModalAdditionalDetails"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

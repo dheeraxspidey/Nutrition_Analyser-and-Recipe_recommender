@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a></li>
+            <li><a href="filtered_search.html">
+                <i class="fas fa-search"></i>
+                <span>Filtered Search</span>
+            </a></li>
+            <li><a href="recipe_recommendations.html">
+                <i class="fas fa-lightbulb"></i>
+                <span>Recipe Recommendation</span>
+            </a></li>
+            <li><a href="nutrition_search.html" class="active">
+                <i class="fas fa-apple-alt"></i>
+                <span>Nutrition</span>
+            </a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <section id="nutrition-search">
+            <h1><i class="fas fa-apple-alt"></i> Nutritional Information Search</h1>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Enter a food item">
+                <button id="searchBtn">Search</button>
+            </div>
+            <div id="overall-chart-container">
+                <canvas id="overallNutritionChart"></canvas>
+            </div>
+            <div id="result">
+                <div id="food-info"></div>
+                <div id="nutrition-info"></div>
+                <canvas id="nutrition-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
