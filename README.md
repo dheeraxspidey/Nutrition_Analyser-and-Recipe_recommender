@@ -40,4 +40,8 @@ The AI Recipe Recommender and Nutritional Analysis App is a user-friendly web ap
 2. Install the required dependencies.
 3. Run the application and start discovering delicious recipes!
 
+## Demo Video
+
+<iframe width="560" height="315" src="https://www.veed.io/view/88c9f9c3-b371-44ff-af1e-0179dd2d961f?panel=share" frameborder="0" allowfullscreen></iframe>
+
 This app serves as a practical tool for cooking enthusiasts and health-conscious individuals, providing valuable insights into nutrition while making meal planning easier.
