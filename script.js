@@ -47,8 +47,8 @@ function initNutritionSearch() {
     document.getElementById('searchBtn').addEventListener('click', async function() {
         const searchQuery = document.getElementById("search").value;
 
-        const appId = "afef2ac3";
-        const apiKey = "0a409dbe12f4e9c0d6c44f2358c75176";
+        const appId = "apiid";
+        const apiKey = "apikey yours";
         const apiUrl = "https://trackapi.nutritionix.com/v2/natural/nutrients";
 
         try {
