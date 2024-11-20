@@ -1,7 +1,7 @@
-# AI Recipe Recommender and Nutritional Analysis App
+# CulinAIry Compass App
 
 ## Description
-The AI Recipe Recommender and Nutritional Analysis App is a user-friendly web application designed to help users discover recipes based on the ingredients they have on hand. It offers a range of features that make cooking more accessible and enjoyable.
+TheCulinAIry Compass App is a user-friendly web application designed to help users discover recipes based on the ingredients they have on hand. It offers a range of features that make cooking more accessible and enjoyable.
 
 ## Features
 
@@ -42,10 +42,10 @@ The AI Recipe Recommender and Nutritional Analysis App is a user-friendly web ap
 
 ## Demo Video
 
-# AI Recipe Recommender and Nutritional Analysis App
+#CulinAIry Compass App
 
 ## Description
-The AI Recipe Recommender and Nutritional Analysis App is a user-friendly web application designed to help users discover recipes based on the ingredients they have on hand. It offers a range of features that make cooking more accessible and enjoyable.
+TheCulinAIry Compass App is a user-friendly web application designed to help users discover recipes based on the ingredients they have on hand. It offers a range of features that make cooking more accessible and enjoyable.
 
 ## Features
 
