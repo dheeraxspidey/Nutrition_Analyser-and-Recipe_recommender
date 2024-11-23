@@ -1,5 +1,5 @@
 
-#CulinAIry Compass App
+##CulinAIry Compass App
 
 ## Description
 TheCulinAIry Compass App is a user-friendly web application designed to help users discover recipes based on the ingredients they have on hand. It offers a range of features that make cooking more accessible and enjoyable.
