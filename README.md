@@ -1,4 +1,3 @@
-
 ##CulinAIry Compass App
 
 ## Description
