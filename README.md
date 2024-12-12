@@ -4,6 +4,7 @@
 
 ---
 
+> For detailed insights into the AI model that powers this application, check out our [Advanced Recipe Recommendation Model](./aimodel/README.md).
 ## 🌟 **Features**
 
 ### **🍳 Recipe Recommendation**
@@ -28,7 +29,6 @@
 ### **📜 Detailed Recipe Instructions**
 - View **comprehensive instructions** for every recipe.  
 ![Recipe Details](screenshots/det.png)
-> For detailed insights into the AI model that powers this application, check out our [Advanced Recipe Recommendation Model](./aimodel/README.md).
 
 ---
 
