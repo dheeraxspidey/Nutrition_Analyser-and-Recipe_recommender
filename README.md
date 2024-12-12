@@ -4,7 +4,7 @@
 
 ---
 
-> For detailed insights into the AI model that powers this application, check out our [Advanced Recipe Recommendation Model](./aimodel/README.md).
+> For detailed insights into the AI model that powers this application, check out our [Advanced Recipe Recommendation Model](./aimodel).
 ## 🌟 **Features**
 
 ### **🍳 Recipe Recommendation**
