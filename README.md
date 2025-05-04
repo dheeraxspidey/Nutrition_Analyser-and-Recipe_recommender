@@ -7,6 +7,15 @@
 > For detailed insights into the AI model that powers this application, check out our [Advanced Recipe Recommendation Model](./aimodel).
 ## 🌟 **Features**
 
+### **📊 Nutrition Analysis**
+- Analyze multiple food items **simultaneously**.  
+- **Individual Ingredient Analysis**:
+  - Visualize detailed charts for each ingredient.  
+  ![Individual Nutrition](screenshots/viz3.png)  
+- **Combined Meal Nutrition**:
+  - Get a holistic breakdown of your meal’s nutrition.  
+  ![Combined Nutrition](screenshots/viz2.png)  
+- Visualize **macronutrients and micronutrients** to better understand your diet.  
 ### **🍳 Recipe Recommendation**
 - Get **top 5 diverse recipe suggestions** based on a selected recipe.  
 - Powered by advanced algorithms for variety and relevance.  
@@ -32,15 +41,6 @@
 
 ---
 
-### **📊 Nutrition Analysis**
-- Analyze multiple food items **simultaneously**.  
-- **Individual Ingredient Analysis**:
-  - Visualize detailed charts for each ingredient.  
-  ![Individual Nutrition](screenshots/viz3.png)  
-- **Combined Meal Nutrition**:
-  - Get a holistic breakdown of your meal’s nutrition.  
-  ![Combined Nutrition](screenshots/viz2.png)  
-- Visualize **macronutrients and micronutrients** to better understand your diet.  
 
 ---
 
